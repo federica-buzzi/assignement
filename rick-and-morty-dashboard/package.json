@@ -1,0 +1,37 @@
+{
+  "name": "rick-and-morty-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "prepare-share:sync": "rsync -r --cvs-exclude --exclude-from=.gitignore --delete . rick-and-morty-dashboard",
+    "prepare-share:zip": "cd rick-and-morty-dashboard && bestzip ../rick-and-morty-dashboard.zip *",
+    "prepare-share": "npm run prepare-share:sync && npm run prepare-share:zip"
+  },
+  "dependencies": {
+    "apexcharts": "^3.25.0",
+    "core-js": "^3.6.5",
+    "tailwindcss": "^2.1.1",
+    "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "bestzip": "^2.2.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-only-warn": "^1.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^7.8.0",
+    "prettier": "^1.19.1",
+    "sass": "^1.32.8",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
