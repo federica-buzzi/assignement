@@ -26,6 +26,8 @@ export default {
   },
 };
 
+// refactorisation of code inspired by https://stackoverflow.com/questions/27651708/how-do-i-find-and-count-unique-values-in-nested-json-objects
+
 // create an empty dictionary
 const allSpecies = {};
 // iterate over episodes
@@ -45,50 +47,48 @@ for (const episode of episodes) {
 }
 // console.log(allSpecies);
 
-const newData = [];
+let newData = [];
 for (const key in allSpecies) {
   newData.push({ label: key, value: allSpecies[key] });
 }
 // console.log(newData);
 
-// const counterHuman = 0;
-// const counterMythologicalCreature = 0;
-// const counterAlien = 0;
-// const counterDisease = 0;
-// const counterCronenberg = 0;
-// const counterAnimal = 0;
-// const counterHumanoid = 0;
+// first more crafty version
+
+// let counterHuman = 0;
+// let counterMythologicalCreature = 0;
+// let counterAlien = 0;
+// let counterDisease = 0;
+// let counterCronenberg = 0;
+// let counterAnimal = 0;
+// let counterHumanoid = 0;
 
 // for (const episode of episodes) {
-//   const { characters } = episode;
-//   console.log(characters);
-//   for (const character of characters) {
-// console.log(character.species);
-// switch (species) {
-//   case 0:
-//     text = 'Human';
-//     counterHuman++;
-//   case 1:
-//     text = 'Mythological Creature';
-//     counterMythologicalCreature++;
-//   case 2:
-//     text = 'Alien';
-//     counterAlien++;
-//   case 3:
-//     text = 'Disease';
-//     counterDisease++;
-//   case 4:
-//     text = 'Cronenberg';
-//     counterCronenberg++;
-//   case 5:
-//     text = 'Animal';
-//     counterAnimal++;
-//   case 6:
-//     text = 'Humanoid';
-//     counterHumanoid++;
+//   const listOfCharacters = episode.characters;
+//   // console.log(listOfCharacters);
+//   for (const character of listOfCharacters) {
+//     // console.log(character.species);
+//     if (character.species === 'Human') {
+//       counterHuman++;
+//     } else if (character.species === 'Mythological Creature') {
+//       counterMythologicalCreature++;
+//     } else if (character.species === 'Alien') {
+//       counterAlien++;
+//     } else if (character.species === 'Disease') {
+//       counterDisease++;
+//     } else if (character.species === 'Cronenberg') {
+//       counterCronenberg++;
+//     } else if (character.species === 'Animal') {
+//       counterAnimal++;
+//     } else {
+//       counterHumanoid++;
+//     }
+//   }
 // }
-// }
-// }
+
+// const finalData = [{ label: 'Alien', value: counterAlien }, { label: 'Animal', value: counterAnimal }, { label: 'Cronenberg', value: counterCronenberg }, { label: 'Disease', value: counterDisease }, { label: 'Human', value: counterHuman }, { label: 'Humanoid', value: counterHumanoid }, { label: 'Mythological Creature', value: counterMythologicalCreature }];
+// console.log(finalData);
+
 </script>
 
 <style>
