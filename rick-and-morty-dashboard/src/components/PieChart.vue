@@ -41,6 +41,7 @@ export default {
     apexchart: VueApexCharts,
   },
 };
+
 </script>
 
 <style>
