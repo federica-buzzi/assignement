@@ -1,5 +1,9 @@
 <template>
-  <apexchart :width="558" :options="chartOptions" :series="series"></apexchart>
+  <div class="containerDashboard">
+    <h1>Statistics</h1>
+    <h3>By species</h3>
+    <apexchart :width="558" :options="chartOptions" :series="series"></apexchart>
+  </div>
 </template>
 
 <script>
@@ -45,6 +49,20 @@ export default {
 </script>
 
 <style>
+
+.containerDashboard{
+   background-color:#e0e7ff;
+   padding: 3%;
+   width: 750px;
+}
+h1{
+  margin: 0 ;
+}
+
+h3{
+  margin: 0;
+}
+
 .apexcharts-tooltip {
   background: #000;
   color: #eee;
@@ -53,4 +71,5 @@ export default {
 .apexcharts-tooltip-series-group {
   padding-bottom: 0 !important;
 }
+
 </style>
